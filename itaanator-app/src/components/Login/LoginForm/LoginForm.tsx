@@ -4,7 +4,7 @@ import "./LoginForm.sass";
 import TextField from "@mui/material/TextField";
 import LogoBFS from "../../../assets/images/LogoBFS.jpeg";
 import Button from "@mui/material/Button";
-import { useState} from "react";
+import { useState,useEffect} from "react";
 
 import { loginPasswordList } from "../../../model/login/LoginList"; //biensur à ne jamais faire
 import { Login } from "../../../model/login/Login";
@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom'
 export function LoginForm(): JSX.Element {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [logged,setLogged]= useState(false)
+
   const navigate = useNavigate()
 
   //màj du state username
@@ -28,13 +30,14 @@ export function LoginForm(): JSX.Element {
   };
 
   //verifier que les username et password du state sont dans la DB (à faire normalement avec un lien vers nodeJs)
-  const creditentialsVerification = (): any => {
+  const creditentialsVerification = (): void => {
     console.log("click on connect");
     loginPasswordList.forEach((user: Login) => {
       if (user.username == username) {
         if (user.password == password) {
           console.log("username/password ok");
-          return goDashboard;
+          setLogged(true);
+         
         }
       }
     });
@@ -42,8 +45,20 @@ export function LoginForm(): JSX.Element {
     
   };
 
+  //track chgmt sur logged et réalise action à chaque màj
+  useEffect(()=>{
+    if(logged){
+      console.log("redirection")
+      navigate("/dashboard")
+    }
+
+  }, [logged])
+
+
+
   //fonction de redirection vers le dashboard
   const goDashboard = () :any =>{
+    console.log("godashboard")
     return navigate("/dashboard")
   }
 
