@@ -1,0 +1,117 @@
+
+.side-navBar-reduit
+    height: 100vh
+    width: 90px
+    background: #0d74f5
+    position: fixed
+    top: 0
+    left: 0
+    padding: 15px
+    display: flex
+    flex-direction: column 
+    align-items: center
+    
+    .logo-navBar
+        align-items: center
+        margin-bottom: 130px 
+        height: 15%//pour que ca ait la même hauteur que en mode non réduit
+
+        
+        .menuIcone
+            height: 50px
+            color: white
+            width: 7rem
+        
+    .menu-navBar
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        
+        .nav-link-reduit
+            list-style: none
+            position: relative
+
+
+        .nav-link-reduit li
+            padding: 10px 0
+            font-size: 20px
+        
+        .nav-link-reduit a
+            color: white
+            //text-decoration: none
+            //margin-left: 15px
+            
+            
+        .nav-link-reduit li:hover
+            color: #7dc7ef
+        
+        .nav-link-reduit a:hover
+            color: #7dc7ef
+
+
+.side-navBar
+    height: 100vh
+    width: 250px
+    background: #0d74f5
+    position: fixed
+    top: 0
+    left: 0
+    padding: 15px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+
+
+
+    .logo-navBar
+        align-items: center
+        height: 15%//pour que ca ait la même hauteur que en mode réduit
+        margin-bottom: 130px
+       
+
+        .BFSLogo
+            width: 7rem
+    
+            
+            
+    .menu-navBar
+
+        
+        .nav-link
+            list-style: none
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+        
+
+
+        .nav-link li
+            padding: 10px 0
+            color: white
+            display: flex
+            align-items: center
+            font-size: 20px
+        
+        .nav-link a
+            color: white
+            text-decoration: none
+            margin-left: 15px
+            
+        .nav-link li:hover
+            color: #7dc7ef
+        
+        .nav-link a:hover
+            color: #7dc7ef
+
+
+            
+@media only screen and (max-width: 800px)
+    .side-navBar
+        width: 110px
+        .BFSLogo
+            margin-bottom: 130px
+            width: 3rem
+

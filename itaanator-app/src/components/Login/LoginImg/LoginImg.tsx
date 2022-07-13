@@ -5,7 +5,7 @@ import "./LoginImg.sass"
 export function LoginImg() : JSX.Element {
   return (
     <div className='LoginImg' >
-        image
+      
         
      
 

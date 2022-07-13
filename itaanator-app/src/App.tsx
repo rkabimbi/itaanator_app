@@ -5,6 +5,8 @@ import './App.css';
 import {Routes, Route} from "react-router-dom"
 import Login from "./components/Login/Login/Login"
 import Dashboard from './components/Dashboard/Dashboard/Dashboard'
+import Budget from './components/Budget/Budget/Budget';
+import Documentation from './components/Documentation/Documentation/Documentation';
 
 
 
@@ -16,6 +18,9 @@ function App() {
      <Routes>
          <Route path="/" element={<Login/>}/>
          <Route path="/dashboard" element={<Dashboard/>}/>
+         <Route path="/budget" element={<Budget/>}/>
+         <Route path="/documentation" element={<Documentation/>}/>
+
       </Routes>
       
     </div>
