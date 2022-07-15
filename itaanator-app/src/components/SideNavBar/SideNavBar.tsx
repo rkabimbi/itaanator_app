@@ -1,4 +1,4 @@
-import "./NavBar.sass";
+import "./SideNavBar.sass";
 import  logoBFS from "../../assets/images/LogoBFS.jpeg"
 import { Link } from "react-router-dom";
 
@@ -22,13 +22,7 @@ export default function NavBar() {
   return (
     <div className={menuToggle?"side-navBar":"side-navBar-reduit"}>
       <a className="logo-navBar" href="#" onClick={toggleMenu}>
-        {menuToggle ? (
-            <img className="BFSLogo" src={logoBFS} />
-          ) 
-          :(
-            <MenuIcon className="menuIcone" />
-          )
-        }
+         <MenuIcon className="menuIcone" />  
       </a>
 
       <div className="menu-navBar">
