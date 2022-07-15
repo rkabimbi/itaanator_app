@@ -23,10 +23,12 @@ export default function NavBar() {
     <div className={menuToggle?"side-navBar":"side-navBar-reduit"}>
       <a className="logo-navBar" href="#" onClick={toggleMenu}>
         {menuToggle ? (
-          <img className="BFSLogo" src={logoBFS} />
-        ) : (
-          <MenuIcon className="menuIcone" />
-        )}
+            <img className="BFSLogo" src={logoBFS} />
+          ) 
+          :(
+            <MenuIcon className="menuIcone" />
+          )
+        }
       </a>
 
       <div className="menu-navBar">
