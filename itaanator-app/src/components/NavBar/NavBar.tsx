@@ -1,5 +1,5 @@
 import "./NavBar.sass";
-import logoBFS from "../../../assets/images/LogoBFS.jpeg";
+import  logoBFS from "../../assets/images/LogoBFS.jpeg"
 import { Link } from "react-router-dom";
 
 import * as React from "react";

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Login.sass"
-import { LoginForm} from '../LoginForm/LoginForm'
-import { LoginImg } from '../LoginImg/LoginImg'
+import { LoginForm} from "../../components/Login/LoginForm/LoginForm"
+import { LoginImg } from '../../components/Login/LoginImg/LoginImg'
 
 export default function Login(): JSX.Element {
   return (
