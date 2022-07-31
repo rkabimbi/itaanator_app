@@ -27,7 +27,7 @@ function App() {
         
           <div className="partieDroite"> 
             <div className="searchBar">
-              <SearchBar/>
+              <SearchBar titre="Liste"/>
             </div>
           
           
