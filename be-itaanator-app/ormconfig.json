@@ -1,0 +1,12 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "rootroot",
+  "database": "db_itaanator",
+  "//_comment": "//nom de la DB",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "//_comment2": "//dire où se trouve les entités (on dit qu’on prend tt partout qui est un fichier de type .entity.ts ou js",
+  "synchronize": true
+}
