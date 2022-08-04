@@ -14,6 +14,7 @@ import { CompanyModule } from './relation/company/company.module';
     password: 'rootroot',
     database: 'db_itaanator',
     entities: ["dist/**/*.entity{.ts,.js}"],
+    //autoLoadEntities: true,
     synchronize: true,
   
   }),],

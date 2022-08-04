@@ -11,7 +11,7 @@ export class Relation extends BaseEntity{
 
     //@Column()
     //timestamp: Date;
-
+    
     @Column({default:"MENSUEL"})
     @IsString()
     VATLiability: string;

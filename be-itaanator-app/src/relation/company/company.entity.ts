@@ -12,6 +12,7 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
     @IsString()
     denomination: string;
 
+    
     @Column({default:"SRL"})
     @IsString()
     legalStatus: string;
