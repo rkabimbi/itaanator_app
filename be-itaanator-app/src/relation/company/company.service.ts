@@ -2,8 +2,9 @@ import { Injectable } from '@nestjs/common';
 //import { Company } from 'src/Company/interfaces/Company.interface';
 import { CreateCompanyDto } from './create-company.dto'; 
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { DataSource, Repository } from 'typeorm';
 import { Company } from './company.entity';
+import { People } from '../people/people.entity';
 
 @Injectable()
 export class CompanyService {
@@ -45,6 +46,11 @@ export class CompanyService {
     this.companyRepository.save(Company)
   }
 
+  async findAllByMainContactId(mainContactId): Promise<CreateCompanyDto[]>{
 
+      const qb= this.companyRepository.createQueryBuilder('recupMainContact')//on cree la qb et on lui donne un nom
+      return await qb.select("company").from(Company,"company").where("company.mainContact=:mainContactId",{mainContactId:mainContactId}).getMany()
+
+}
 
 }

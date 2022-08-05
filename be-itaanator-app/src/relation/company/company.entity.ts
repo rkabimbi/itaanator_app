@@ -1,5 +1,6 @@
 import { IsString, Max, MaxLength, Min, MinLength } from "class-validator";
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique, ManyToOne, JoinColumn } from "typeorm";
+import { People } from "../people/people.entity";
 import { Relation } from "../relation.entity";
 
 
@@ -21,7 +22,7 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
     @IsString()
     VATNumber: string;
 
-    @Column()
+    @Column({nullable:true})
     @IsString()
     website: string;
 
@@ -33,5 +34,13 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
 
     @Column()
     capital: number;
+
+    @ManyToOne(type => People, (people)=>people.company)
+    //@JoinColumn({ name: "mainContactId", referencedColumnName:"id" })
+    mainContact: People;
+
+    @Column()
+    test:string;
+
 
 }

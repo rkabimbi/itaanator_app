@@ -38,7 +38,11 @@ export class PeopleService {
   
 
   async create(people: CreatePeopleDto){
-    this.peopleRepository.save(people)
+    
+      this.peopleRepository.save(people)
+    
+
+    
   }
 
 

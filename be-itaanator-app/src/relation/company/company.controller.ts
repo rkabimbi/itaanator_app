@@ -33,6 +33,14 @@ export class CompanyController {
     return this.companyService.findOneByVATNumber(VATNumber);
   }
 
+  @Get('mainContact/:mainContactId')
+  //return all the company where the mainContact is :mainContactId
+  findAllByMainContactId(@Param('mainContactId') mainContactId: number): Promise<CreateCompanyDto[]>{
+    return this.companyService.findAllByMainContactId(mainContactId);
+
+  }
+
+
   @Post()
   //create a new company
   create(@Body() newCompany){

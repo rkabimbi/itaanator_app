@@ -1,5 +1,5 @@
 import { IsString, Max, MaxLength, Min, MinLength } from "class-validator";
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique, PrimaryColumn } from "typeorm";
 
 
 @Entity()
@@ -7,6 +7,7 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique } from "type
 export class Relation extends BaseEntity{
 
     @PrimaryGeneratedColumn()
+    @PrimaryColumn()
     id: number;
 
     //@Column()
