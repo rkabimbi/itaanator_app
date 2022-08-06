@@ -11,7 +11,7 @@ export class CreateCompanyDto extends CreateRelationDto{
     readonly sharesUnitValue: number;
     readonly capital: number;
     readonly mainContact: People;
-    readonly test:string;
+
     
     
 }

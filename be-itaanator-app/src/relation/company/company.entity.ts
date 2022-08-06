@@ -35,12 +35,15 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
     @Column()
     capital: number;
 
-    @ManyToOne(type => People, (people)=>people.company)
-    //@JoinColumn({ name: "mainContactId", referencedColumnName:"id" })
+    //recover in JSON the company information (linked to fk_company)
+    @ManyToOne(type => People, (people)=>people.fk_company, {eager:true})
     mainContact: People;
 
-    @Column()
-    test:string;
+    //only fk -->not available in JSON (linked to company)
+    @ManyToOne(type => People, (people)=>people.company)
+    fk_mainContact: People;
+
+
 
 
 }

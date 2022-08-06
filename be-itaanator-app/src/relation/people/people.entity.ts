@@ -46,8 +46,12 @@ export class People extends Relation{ //don't need to extends BaseEntity as Moth
     @IsBoolean()
     pep: boolean;
 
+    //only fk -->not available in JSON (linked to mainContact)
     @OneToMany(type => Company,(company)=>company.mainContact)
-    //@JoinColumn({ name: "mainContactId", referencedColumnName:"id" })
+    fk_company: Company[];
+
+    //recover in JSON the list of all company information which are link to this People (linked to fk_mainContact)
+    @OneToMany(type => Company,(company)=>company.fk_mainContact, {eager:true})
     company: Company[];
 
 
