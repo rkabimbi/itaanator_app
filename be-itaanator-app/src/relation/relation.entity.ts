@@ -1,5 +1,6 @@
 import { IsString, Max, MaxLength, Min, MinLength } from "class-validator";
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique, PrimaryColumn } from "typeorm";
+import { Contract } from "src/contract/contract.entity";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique, PrimaryColumn, ManyToMany, JoinTable } from "typeorm";
 
 
 @Entity()
@@ -23,5 +24,8 @@ export class Relation extends BaseEntity{
     @Column()
     finDebt: boolean;
     
+    @ManyToMany(() => Contract, (contract) => contract.relations,{eager:true})
+    @JoinTable()
+    contracts: Contract[]
 
 }

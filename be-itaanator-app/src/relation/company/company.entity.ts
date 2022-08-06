@@ -26,7 +26,7 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
     @IsString()
     website: string;
 
-    //@Column()
+    //@Column({nullable:true})
     //closingDate: Date;
 
     @Column()
@@ -35,12 +35,10 @@ export class Company extends Relation{ //don't need to extends BaseEntity as Mot
     @Column()
     capital: number;
 
-    //recover in JSON the company information (linked to fk_company)
-    @ManyToOne(type => People, (people)=>people.fk_company, {eager:true})
-    mainContact: People;
+
 
     //only fk -->not available in JSON (linked to company)
-    @ManyToOne(type => People, (people)=>people.company)
+    @ManyToOne(type => People, (people)=>people.companies)
     fk_mainContact: People;
 
 

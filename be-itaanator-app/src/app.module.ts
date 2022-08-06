@@ -4,9 +4,13 @@ import { AppService } from './app.service';
 import { RelationModule } from './relation/relation.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CompanyModule } from './relation/company/company.module';
+import { ContractModule } from './contract/contract.module';
 
 @Module({
-  imports: [RelationModule,TypeOrmModule.forRoot({
+  imports: [
+    RelationModule,
+    ContractModule,    
+    TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
     port: 3306,

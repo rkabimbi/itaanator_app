@@ -1,0 +1,81 @@
+INSERT INTO `db_itaanator`.`company`
+(`id`,
+`VATLiability`,
+`taxDebt`,
+`finDebt`,
+`denomination`,
+`legalStatus`,
+`VATNumber`,
+`website`,
+`sharesUnitValue`,
+`capital`,
+`fkMainContactId`)
+VALUES
+(<{id: }>,
+<{VATLiability: MENSUEL}>,
+<{taxDebt: }>,
+<{finDebt: }>,
+<{denomination: }>,
+<{legalStatus: SRL}>,
+<{VATNumber: }>,
+<{website: }>,
+<{sharesUnitValue: }>,
+<{capital: }>,
+<{fkMainContactId: }>);
+
+INSERT INTO `db_itaanator`.`contract`
+(`id`,
+`confrere`,
+`digitalInvoice`,
+`invoiceAnnexe`,
+`invoicingMethod`,
+`comment`,
+`budget`)
+VALUES
+(<{id: }>,
+<{confrere: 0}>,
+<{digitalInvoice: 0}>,
+<{invoiceAnnexe: 0}>,
+<{invoicingMethod: }>,
+<{comment: }>,
+<{budget: }>);
+
+INSERT INTO `db_itaanator`.`people`
+(`id`,
+`VATLiability`,
+`taxDebt`,
+`finDebt`,
+`nationalNumber`,
+`firstname`,
+`lastname`,
+`language`,
+`phoneNumber`,
+`headquartersAdress`,
+`email`,
+`pep`,
+`sexe`)
+VALUES
+(<{id: }>,
+<{VATLiability: MENSUEL}>,
+<{taxDebt: }>,
+<{finDebt: }>,
+<{nationalNumber: }>,
+<{firstname: }>,
+<{lastname: SRL}>,
+<{language: }>,
+<{phoneNumber: }>,
+<{headquartersAdress: }>,
+<{email: }>,
+<{pep: }>,
+<{sexe: }>);
+
+INSERT INTO `db_itaanator`.`relation`
+(`id`,
+`VATLiability`,
+`taxDebt`,
+`finDebt`)
+VALUES
+(<{id: }>,
+<{VATLiability: MENSUEL}>,
+<{taxDebt: }>,
+<{finDebt: }>);

@@ -12,7 +12,9 @@ export class CreatePeopleDto extends CreateRelationDto{
     readonly headquartersAdress: string;
     readonly email: string;
     readonly pep: boolean;
-    readonly company: Company[]
+    readonly companies: Company[];
+    readonly sexe: string;
+
     
 
     

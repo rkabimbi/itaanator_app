@@ -10,7 +10,8 @@ export class CreateCompanyDto extends CreateRelationDto{
     //readonly closingDate: Date;
     readonly sharesUnitValue: number;
     readonly capital: number;
-    readonly mainContact: People;
+    readonly fk_mainContact: People;
+
 
     
     
