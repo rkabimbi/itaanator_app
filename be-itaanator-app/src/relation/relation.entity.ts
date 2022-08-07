@@ -18,14 +18,17 @@ export class Relation extends BaseEntity{
     @IsString()
     VATLiability: string;
 
-    @Column()
+    @Column({default:false})
     taxDebt: boolean;
 
-    @Column()
+    @Column({default:false})
     finDebt: boolean;
     
     @ManyToMany(() => Contract, (contract) => contract.relations,{eager:true})
     @JoinTable()
-    contracts: Contract[]
+    contracts: Contract[];
+
+
+
 
 }

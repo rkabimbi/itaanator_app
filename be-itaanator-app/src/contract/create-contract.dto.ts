@@ -1,3 +1,5 @@
+import { Relation } from "src/relation/relation.entity";
+
 //Dto impose une syntaxe/type entre front-end et back-end (principalement à destination des services donc)
 export class CreateContractDto{
     readonly id: number;
@@ -9,6 +11,7 @@ export class CreateContractDto{
     readonly budget: number;
     //readonly startingMission: Date;
     //readonly lastModification: Date;
+    readonly relations: Relation[]
 }
 
 

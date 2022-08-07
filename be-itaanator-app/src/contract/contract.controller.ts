@@ -1,4 +1,4 @@
-import { Controller, Get,Post,Body, Param } from '@nestjs/common';
+import { Controller, Get,Post,Body, Param, Patch } from '@nestjs/common';
 import { ContractService } from './contract.service';
 import { CreateContractDto } from './create-contract.dto';
 
@@ -22,18 +22,16 @@ export class ContractController {
     return this.contractService.findOne(id);
   }
 
-  /*
-  @Get('VATNumber/:VATNumber')
-  //return all the contract from one company from VATNumber of the linked company
-  findAllByVATNumber(@Param('id') VATNumber:string): Promise <CreateContractDto[]>{
-    return this.contractService.findAllByVATNumber(VATNumber);
-  }
-  */
 
 
 
   @Post()
   create(@Body() newContract){
     this. contractService.create(newContract)
+  }
+
+  @Patch(':id')
+  updateById(@Param('id') id: number, @Body() updatedContract){
+    this.contractService.updateById(id, updatedContract)
   }
 }

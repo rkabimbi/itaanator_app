@@ -1,4 +1,4 @@
-import { Controller, Get,Post,Body, Param } from '@nestjs/common';
+import { Controller, Get,Post,Body, Param, Patch, Put } from '@nestjs/common';
 import { CompanyService } from './company.service';
 import { CreateCompanyDto } from './create-company.dto';
 
@@ -46,4 +46,13 @@ export class CompanyController {
   create(@Body() newCompany){
     return this. companyService.create(newCompany)
   }
+
+  @Patch(':id')
+  updateById(@Param('id') id:number, @Body() updatedCompany: CreateCompanyDto){
+    return this. companyService.updateById(id,updatedCompany)
+  }
+
+
+
+
 }

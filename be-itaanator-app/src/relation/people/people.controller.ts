@@ -1,4 +1,4 @@
-import { Controller, Get,Post,Body, Param } from '@nestjs/common';
+import { Controller, Get,Post,Body, Param, Patch } from '@nestjs/common';
 import { PeopleService } from './people.service';
 import { CreatePeopleDto } from './create-people.dto';
 
@@ -34,4 +34,10 @@ export class PeopleController {
   create(@Body() newPeople){
     return this. peopleService.create(newPeople)
   }
+
+  @Patch(':id')
+  updateById(@Param('id') id:number, @Body() updatedPeople: CreatePeopleDto){
+    return this. peopleService.updateById(id,updatedPeople)
+  }
+
 }

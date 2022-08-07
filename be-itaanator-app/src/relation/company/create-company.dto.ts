@@ -1,3 +1,4 @@
+import { Contract } from "src/contract/contract.entity";
 import { CreateRelationDto } from "../create-relation.dto";
 import { People } from "../people/people.entity";
 
@@ -11,6 +12,7 @@ export class CreateCompanyDto extends CreateRelationDto{
     readonly sharesUnitValue: number;
     readonly capital: number;
     readonly fk_mainContact: People;
+    
 
 
     

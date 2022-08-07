@@ -4,6 +4,7 @@ import { CreateRelationDto } from './create-relation.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Relation } from './relation.entity';
+import { Contract } from 'src/contract/contract.entity';
 
 @Injectable()
 export class RelationService {
@@ -20,6 +21,16 @@ export class RelationService {
   }
 
   async create(relation: CreateRelationDto){
+    /*const contract = new Contract()
+    contract.budget=89000
+    contract.comment="pureee je crois que j'y suis enfin"
+    contract.confrere=false
+    contract.digitalInvoice=true
+    contract.invoiceAnnexe=false
+    contract.invoicingMethod="régie"
+    relation.contracts.push(contract)*/
     this.relationsRepository.save(relation)
   }
+
+
 }
