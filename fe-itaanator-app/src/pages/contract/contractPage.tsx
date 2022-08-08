@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { contractList } from '../../model/contract/contractListModel';
+import { Contract } from '../../model/contract/contractModel';
 
 export  function ContractPage() {
 
   
-   const [contracts, setContracts] = useState(null);
+   const [contracts, setContracts] = useState<Contract[]>();
 
    useEffect(() => {
       console.log("composant ContractPage màj")
@@ -23,7 +24,7 @@ export  function ContractPage() {
          .then((response) => response.json())
          .then((data) => {
             console.log(data);
-            setContracts(data[0].budget)
+            setContracts(data)
            
          })
          .catch((err) => {
@@ -44,13 +45,28 @@ export  function ContractPage() {
 
 
   return (
-   <div>
+   <React.Fragment>
+      <div> 
       <h1> contractPage</h1>
-      <div>{contracts ? contracts : "rien"} </div>
-   </div> 
+
+      { contracts && 
+                  contracts.map( (contract) =>(
+                     <div>
+                        <h3> budget : {contract.budget}</h3>
+                        <h3> commentaire : {contract.comment}</h3>
+                        <h3> invoice method: {contract.invoicingMethod}</h3>
+
+                        </div>
+                  ))
+                  
+               
+      }
+         
+      </div>  
+   </React.Fragment>
 
 
-  );
+  )
 }
 
 
