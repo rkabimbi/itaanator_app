@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Routes, Route} from "react-router-dom"
-import ContractPage from './pages/contract/ContractPage';
+import { ContractPage} from './pages/contract/ContractPage';
 
 
 function App() {

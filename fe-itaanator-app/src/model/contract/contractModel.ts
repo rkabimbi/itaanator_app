@@ -8,7 +8,8 @@ export interface IContract{
     invoiceAnnexe: boolean;
     comment: string;
     budget: number;
-    relations: Relation[]
+    relations: Relation[];
+   
 }
 
 export class Contract implements IContract{
