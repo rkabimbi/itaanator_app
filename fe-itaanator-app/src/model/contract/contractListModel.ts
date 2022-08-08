@@ -1,27 +1,26 @@
-export class contractList{
-    contractList=[]
+import { Contract } from "./contractModel";
 
-    constructor(){
-    fetch('http://localhost:3001/contract')
+export class contractList {
+  contractList: Contract[] = [];
+
+  constructor() {
+    fetch("http://localhost:3001/contract")
       .then((response) => response.json())
-      .then((data) => {
-         console.log(data);
-         //je vais boucler sur data pour assigner ca dans l'objet
-         for (let contract  in data){
-            console.log("un contrat")
+      .then((contracts) => {
+        console.log(contracts);
+        //je vais boucler sur data pour assigner ca dans l'objet
+        contracts.map((contract: Contract) => {
+          this.contractList.push(contract);
+          console.log("j ajoute un contrat à contractlist:", contract);
+        });
 
-         }
-        console.log("je cree")
-         
       })
       .catch((err) => {
-         console.log(err.message);
+        console.log(err.message);
       });
+  }
 
-   
-
-    }
-
-//je devrais creer des get et setteur
-
+  //je devrais creer des get et setteur
 }
+
+export const contractListObject= new contractList()
