@@ -1,9 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import List from "../../components/list/List";
+import {Table} from "../../components/list/Table";
 
-export function ContracPage() {
+export function ContractPage() {
+  
   const [contracts, setContracts] = useState();
+  const [jsonKeys, setJsonKeys] = useState();
+  
 
   useEffect(() => {
     console.log("fetch sur contract");
@@ -12,6 +15,7 @@ export function ContracPage() {
       .then((response) => response.json())
       .then((data) => {
         setContracts(data);
+        setJsonKeys(Object.keys(data[0]))//allow to get the keys of JSON. I need this to make Table components reusable
         console.log(contracts);
       })
       .catch((err) => {
@@ -19,11 +23,14 @@ export function ContracPage() {
       });
   }, []);
 
+
+  
+
   return (
     <div>
       <h1>ContracPage</h1>
 
-      <List contracts={contracts} />
+      <Table contracts={contracts} jsonKeys={jsonKeys} />
     </div>
   );
 }
