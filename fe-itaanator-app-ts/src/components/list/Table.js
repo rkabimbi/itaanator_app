@@ -41,26 +41,28 @@ const rows = [
 
 //display all the received arrays in a UI MATERIAL list
 export function Table(props) {
-  const [columns2, setColumns] = useState();
   
+  //const [columns2, setColumns] = useState();
+  /*
   useEffect(() => {
     
   
       let result = [];
   
 
-      let titleDescription = {
+      let columnDescription = {
         field: "",
         headerName: "",
         width: "",
       };
 
       for (let title in props.jsonKeys) {
-        titleDescription.field = title;
-        titleDescription.headerName = title;
-        titleDescription.width = 70;
-        let copy = { ...titleDescription }; //deepcoy
+        columnDescription.field = title;
+        columnDescription.headerName = title;
+        columnDescription.width = 70;
+        let copy = { ...columnDescription }; //deepcoy
         result.push(copy);
+        console.log("foreach")
       }
 
        setColumns(result);
@@ -69,27 +71,32 @@ export function Table(props) {
     }
 
   , []);
+  */
 
   console.log("dans list");
-  console.log(props);
-  console.log(props.contracts);
-  console.log(props.jsonKeys);
+  console.log("dans list - props : \n",props);
+  console.log("dans list - props.contracts : \n",props.contracts);
+  console.log("dans list - props.jsonkeys : \n",props.jsonKeys);
+  console.log("dans list - props.columnsInfos : \n",props.columnsInfos);
 
 
 
-
+if(props.columnsInfos){
 
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
         rows={rows}
-        columns={columns}
+        columns={props.columnsInfos}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
       />
+      <div> </div>
     </div>
   );
+
+} 
 }
 
 /*
