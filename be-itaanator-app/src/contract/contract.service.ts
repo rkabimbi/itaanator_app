@@ -60,6 +60,10 @@ export class ContractService {
     {
       contractToUpdate.relations=updatedContract.relations
     }
+    if(updatedContract.hasOwnProperty('creator'))
+    {
+      contractToUpdate.creator=updatedContract.creator
+    }
 
     return await this.contractRepository.save(contractToUpdate)
 

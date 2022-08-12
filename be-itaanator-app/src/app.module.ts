@@ -3,13 +3,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RelationModule } from './relation/relation.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CompanyModule } from './relation/company/company.module';
+
 import { ContractModule } from './contract/contract.module';
+import { CollaboratorModule } from './collaborator/collaborator.module';
+
 
 @Module({
   imports: [
     RelationModule,
-    ContractModule,    
+    ContractModule,CollaboratorModule,    
     TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
