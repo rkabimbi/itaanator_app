@@ -1,5 +1,6 @@
 import { Collaborator, FUNCTION, GENDER } from "src/collaborator/collaborator.entity";
 import { Contract } from "src/contract/contract.entity";
+import { Task } from "src/task/task.entity";
 
 //Dto impose une syntaxe/type entre front-end et back-end (principalement à destination des services donc)
 export class CreateCollaboratorDto{
@@ -13,6 +14,8 @@ export class CreateCollaboratorDto{
     readonly phoneNumber: string;
     readonly hourlyRate: number;
     readonly contracts: Contract[];
+    readonly itaa: boolean;
+    readonly tasks: Task[];
 }
 
 

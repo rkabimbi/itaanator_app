@@ -71,6 +71,16 @@ export class CollaboratorService {
       collaboratorToUpdate.contracts=updatedCollaborator.contracts
     }
 
+    if(updatedCollaborator.hasOwnProperty('tasks'))
+    {
+      collaboratorToUpdate.tasks=updatedCollaborator.tasks
+    }
+
+    if(updatedCollaborator.hasOwnProperty('itaa'))
+    {
+      collaboratorToUpdate.itaa=updatedCollaborator.itaa
+    }
+
     return await this.collaboratorRepository.save(collaboratorToUpdate)
 
   }

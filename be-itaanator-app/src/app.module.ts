@@ -6,12 +6,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ContractModule } from './contract/contract.module';
 import { CollaboratorModule } from './collaborator/collaborator.module';
+import { TaskModule } from './task/task.module';
 
 
 @Module({
   imports: [
     RelationModule,
-    ContractModule,CollaboratorModule,    
+    ContractModule,CollaboratorModule, TaskModule,   
     TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',

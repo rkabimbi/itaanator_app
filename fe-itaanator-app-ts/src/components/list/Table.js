@@ -15,8 +15,8 @@ export function Table(props) {
 if(props.columnsInfos && props.contracts){
 
   return (
-    <div className='tabContract' style={{ height: 400, width: "100%" }}>
-      <DataGrid
+    <div className='tabContract' >
+      <DataGrid className='tab'
         rows={props.contracts}
         columns={props.columnsInfos}
         pageSize={5}

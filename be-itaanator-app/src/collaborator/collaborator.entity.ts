@@ -1,5 +1,6 @@
-import { IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator";
+import { IsBoolean, IsNumber, IsString, Max, MaxLength, Min, MinLength } from "class-validator";
 import { Contract } from "src/contract/contract.entity";
+import { Task } from "src/task/task.entity";
 
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, Unique, PrimaryColumn, ManyToMany, OneToMany } from "typeorm";
 
@@ -28,30 +29,30 @@ export class Collaborator extends BaseEntity{
     id: number;
 
    
-    @Column()
+    @Column({default: GENDER.FEMME})
     sexe: GENDER;
 
-    @Column()
+    @Column({default: FUNCTION.ASM})
     @IsString()
     function: FUNCTION;
 
-    @Column()
+    @Column({default: " "})
     @IsString()
     firstname:string;
 
-    @Column()
+    @Column({default: " "})
     @IsString()
     lastname:string;
 
-    @Column()
+    @Column({default: " "})
     @IsString()
     emailAdress: string;
 
-    @Column()
+    @Column({default: " "})
     @IsString()
     password: string;
 
-    @Column()
+    @Column({default: " "})
     @IsString()
     phoneNumber: string;
 
@@ -61,6 +62,14 @@ export class Collaborator extends BaseEntity{
 
     @OneToMany(type => Contract,(contract)=>contract.creator, {eager:true})
     contracts: Contract[];
+
+
+    @Column({default: false})
+    @IsBoolean()
+    itaa: boolean;
+
+    @OneToMany(type => Task,(task)=>task.responsibleId, {eager:true})
+    tasks: Task[];
 
 
 
