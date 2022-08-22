@@ -22,7 +22,7 @@ import { RelationModule } from './relation/relation.module';
     //RelationModule,
     
     BrowserAnimationsModule,
-    MatButtonModule,
+    RelationModule,
     AppRoutingModule,
   ],
   providers: [],
