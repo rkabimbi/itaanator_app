@@ -10,6 +10,7 @@ import { RelationComponent } from './relation/relation.component';
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { RelationModule } from './relation/relation.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RelationModule } from './relation/relation.module';
   imports: [
     BrowserModule,
     //RelationModule,
+    HttpClientModule,
     
     BrowserAnimationsModule,
     RelationModule,

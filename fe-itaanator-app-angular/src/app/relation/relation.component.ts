@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Relation } from './relation';
+import { RelationService } from './relation.service';
 
 @Component({
   selector: 'app-relation',
@@ -8,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelationComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
